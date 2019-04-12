@@ -1,0 +1,27 @@
+<%= form_with(model: primary_color, local: true) do |form| %>
+  <% if primary_color.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(primary_color.errors.count, "error") %> prohibited this primary_color from being saved:</h2>
+
+      <ul>
+      <% primary_color.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hash_code %>
+    <%= form.text_field :hash_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

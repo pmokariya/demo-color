@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @secondary_color.name %>
+</p>
+
+<p>
+  <strong>Hash code:</strong>
+  <%= @secondary_color.hash_code %>
+</p>
+
+<p>
+  <strong>Primary color:</strong>
+  <%= @secondary_color.primary_color %>
+</p>
+
+<%= link_to 'Edit', edit_secondary_color_path(@secondary_color) %> |
+<%= link_to 'Back', secondary_colors_path %>

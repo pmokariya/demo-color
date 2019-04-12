@@ -1,0 +1,77 @@
+<!-- <p id="notice"><%#= notice %></p>
+
+<h1>Primary Colors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hash code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%# @primary_colors.each do |primary_color| %>
+      <tr>
+        <td><%#= primary_color.name %></td>
+        <td><%#= primary_color.hash_code %></td>
+        <td><%#= link_to 'Show', primary_color %></td>
+        <td><%#= link_to 'Edit', edit_primary_color_path(primary_color) %></td>
+        <td><%#= link_to 'Destroy', primary_color, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table>
+
+<br> -->
+
+<%#= link_to 'New Primary Color', new_primary_color_path %>
+<h1>Colores</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <% @primary_colors.each do |primary_color| %>
+      <div class="col-sm-2 primary_color" id="color_<%= primary_color.id %>">
+        <div class="rectangle_pri" style="background-color:<%= primary_color.hash_code %>" > </div>
+          <div class="sub-colore">
+            <% n = 1 %>
+          <% primary_color.secondary_colors.each do |secondary_color| %>
+              <div class="col-sm-6 rectangle_sub" id="rectangle_sub_<%= n %>" style="background-color:<%= secondary_color.hash_code %>"></div>
+              <% n = n + 1%>
+          <% end %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-sm-6">
+    <h3>We can see color changes here on selection</h3>
+    <div class="mob-primary-color">
+      Primary Color
+    </div>
+    <div class="mob-secondary-color-1">
+      Secondary color 1
+    </div>
+    <div class="mob-secondary-color-2">
+      Secondary color 2
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  .primary_color{
+    margin: 15px;
+    padding: 0px;
+  }
+</style>
+<script type="text/javascript">
+  $('.primary_color').click(function() {
+    pri_color = $("#"+this.id).find(".rectangle_pri").css( "background-color" );
+    sub_1_color = $("#"+this.id).find("#rectangle_sub_1").css( "background-color" );
+    sub_2_color = $("#"+this.id).find("#rectangle_sub_2").css( "background-color" );
+    $(".mob-primary-color").css("background-color", pri_color);
+    $(".mob-secondary-color-1").css("background-color", sub_1_color);
+    $(".mob-secondary-color-2").css("background-color", sub_2_color);
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+  });
+</script>

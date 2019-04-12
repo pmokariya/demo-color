@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Secondary Colors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hash code</th>
+      <th>Primary color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @secondary_colors.each do |secondary_color| %>
+      <tr>
+        <td><%= secondary_color.name %></td>
+        <td><%= secondary_color.hash_code %></td>
+        <td><%= secondary_color.primary_color %></td>
+        <td><%= link_to 'Show', secondary_color %></td>
+        <td><%= link_to 'Edit', edit_secondary_color_path(secondary_color) %></td>
+        <td><%= link_to 'Destroy', secondary_color, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Secondary Color', new_secondary_color_path %>
