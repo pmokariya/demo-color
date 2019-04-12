@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_04_12_160944) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "primary_colors", force: :cascade do |t|
     t.string "name"
     t.string "hash_code"
@@ -22,10 +25,11 @@ ActiveRecord::Schema.define(version: 2019_04_12_160944) do
   create_table "secondary_colors", force: :cascade do |t|
     t.string "name"
     t.string "hash_code"
-    t.integer "primary_color_id"
+    t.bigint "primary_color_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["primary_color_id"], name: "index_secondary_colors_on_primary_color_id"
   end
 
+  add_foreign_key "secondary_colors", "primary_colors"
 end
