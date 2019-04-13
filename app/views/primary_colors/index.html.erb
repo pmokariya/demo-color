@@ -43,21 +43,27 @@
       </div>
     <% end %>
   </div>
-  <div class="col-sm-6">
-    <h3>We can see color changes here on selection</h3>
-    <div class="mob-primary-color">
-      Primary Color
-    </div>
+  <h3>We can see color changes here on selection</h3>
+  <div class="col-sm-6 mobile-view">
     <div class="mob-secondary-color-1">
-      Secondary color 1
+    </div>
+    <div class="mob-primary-color-top">
+    </div>
+    <div class="bg-white">
+    </div>
+    <div class="mob-primary-color-bottom">
     </div>
     <div class="mob-secondary-color-2">
-      Secondary color 2
     </div>
   </div>
 </div>
 
 <style type="text/css">
+  .mobile-view{
+    background-image: url('/assets/Samssung S9@2x.png');
+    background-repeat: no-repeat;
+    height: 1050px ;
+  }
   .primary_color{
     margin: 15px;
     padding: 0px;
@@ -68,7 +74,8 @@
     pri_color = $("#"+this.id).find(".rectangle_pri").css( "background-color" );
     sub_1_color = $("#"+this.id).find("#rectangle_sub_1").css( "background-color" );
     sub_2_color = $("#"+this.id).find("#rectangle_sub_2").css( "background-color" );
-    $(".mob-primary-color").css("background-color", pri_color);
+    $(".mob-primary-color-top").css("background-color", pri_color);
+    $(".mob-primary-color-bottom").css("background-color", pri_color);
     $(".mob-secondary-color-1").css("background-color", sub_1_color);
     $(".mob-secondary-color-2").css("background-color", sub_2_color);
     $("html, body").animate({ scrollTop: 0 }, "slow");

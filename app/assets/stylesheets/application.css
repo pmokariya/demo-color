@@ -32,3 +32,35 @@
 .rectangle_sub{
 	height: 30px;
 }
+.mob-primary-color-top{
+	width: 449px;
+    margin: 0px;
+    height: 50px;
+}
+.mob-primary-color-bottom{
+	position: absolute;
+    bottom: 90px;
+    width: 447px;
+    margin: 0px;
+    height: 50px;
+}
+.mob-secondary-color-1{
+	border-top-left-radius:70px;
+	border-top-right-radius:70px;
+	width: 448px;
+    margin: 43px 0 0 1px;
+    height: 30px;
+}
+.mob-secondary-color-2{
+	border-bottom-left-radius:70px;
+	border-bottom-right-radius:70px;
+	position: absolute;
+	width: 448px;
+    bottom: 50px;
+    height: 40px;
+}
+.bg-white{
+	background-color: white;
+	height: 787px;
+    width: 447px;
+}
